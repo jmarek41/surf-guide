@@ -1,11 +1,12 @@
 ---
+name: surf
 description: Recommend where and when to surf from the active location using live swell, wind, tide, shared spot facts, and private calibration.
-argument-hint: "[when — e.g. today, tomorrow, Saturday dawn, this weekend]"
+license: MIT
 ---
 
 # Surf forecast
 
-Answer “where and when should I surf `$ARGUMENTS`?”
+Answer the user's “where and when should I surf?” request.
 
 ## Preconditions
 

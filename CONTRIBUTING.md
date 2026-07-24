@@ -7,8 +7,8 @@ Thank you for helping improve surf-guide.
 1. Run `git status`.
 2. Confirm that no file under `data/` is staged or tracked.
 3. Run `./scripts/validate.sh`.
-4. Remove names, exact accommodation details, raw session rows, seller
-   conversations, and other personal data.
+4. Remove names, exact accommodation details, raw session rows, shop/seller
+   conversations, rental bookings, and other personal data.
 5. Explain which statements are sourced, inferred, or observed.
 
 ## Adding a location or spot

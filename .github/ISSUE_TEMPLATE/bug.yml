@@ -7,7 +7,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Do not paste rider profiles, raw session logs, exact accommodation details, API keys, or seller messages.
+        Do not paste rider profiles, raw session logs, exact accommodation details, API keys, shop/seller messages, or rental bookings.
   - type: textarea
     id: problem
     attributes:
@@ -24,8 +24,8 @@ body:
   - type: input
     id: version
     attributes:
-      label: Claude Code version
-      placeholder: "claude --version"
+      label: AI tool and version
+      placeholder: "Tool name and version"
   - type: textarea
     id: context
     attributes:

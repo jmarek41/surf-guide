@@ -15,8 +15,8 @@ The free API is for non-commercial use and has usage limits. Review the current
 
 MET Norway data require attribution under CC BY 4.0. API clients must identify
 the application with a meaningful User-Agent and must avoid unnecessary
-traffic. Claude WebFetch does not provide reliable control over that header, so
-MET Norway is not a default automated source in this repository.
+traffic. Generic AI web-fetch tools do not always provide reliable control over
+that header, so MET Norway is not a default automated source in this repository.
 
 If a future helper client is added, it must follow the
 [MET Weather API terms](https://api.met.no/doc/TermsOfService), including

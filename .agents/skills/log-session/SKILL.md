@@ -1,12 +1,12 @@
 ---
+name: log-session
 description: Log a surf session or visual spot check locally and update private forecast calibration. Use when the user reports what conditions were actually like.
-argument-hint: "[session report]"
-disable-model-invocation: true
+license: MIT
 ---
 
 # Log a session
 
-Record `$ARGUMENTS` as private ground truth.
+Record the user's session report as private ground truth.
 
 ## Load
 

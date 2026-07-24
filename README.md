@@ -1,15 +1,15 @@
-# Surf Guide for Claude Code
+# Surf Guide for AI Agents
 
-`surf-guide` turns a Claude Code workspace into a personal surf forecaster and
-used-board buying assistant.
+`surf-guide` gives an AI coding agent a personal surf forecaster and board
+recommendation workflow.
 
 The repository deliberately separates two kinds of knowledge:
 
 - **Shared knowledge:** forecast methodology, sourced spot facts, hazards, access,
   exposure, and anonymized calibration that can help every surfer.
-- **Private knowledge:** rider profile, exact base, board history, shortlists,
-  raw session logs, and personal calibration. These live under `data/`, which is
-  ignored by Git.
+- **Private knowledge:** rider profile, exact base, board history,
+  recommendations, raw session logs, and personal calibration. These live under
+  `data/`, which is ignored by Git.
 
 ## What you get
 
@@ -19,37 +19,43 @@ The repository deliberately separates two kinds of knowledge:
   wind, and tide data.
 - `/log-session` — records forecast versus reality locally so recommendations
   improve over time.
-- `/board-buy [listing or request]` — builds a board brief, researches a local
-  used market, or evaluates a listing.
+- `/board-recommend [request or option]` — recommends a board, then evaluates
+  matching new, used, or rental options.
 
-Claude Code skills are plain Markdown. There is no application server, account,
-database, API key, or build step.
+The workflows follow the open [Agent Skills](https://agentskills.io/) `SKILL.md`
+format. There is no application server, account, database, API key, or build
+step.
 
 ## Quick start
 
-1. Install and authenticate [Claude Code](https://code.claude.com/docs/en/quickstart).
-2. Clone this repository and enter it:
+1. Use an AI coding agent that can read `AGENTS.md` and Markdown files. Native
+   Agent Skills support is helpful but not required.
+2. Clone this repository and open it as the agent's workspace:
 
    ```bash
    git clone https://github.com/jmarek41/surf-guide.git
    cd surf-guide
-   claude
    ```
 
-3. Run:
+3. Ask the agent to run the `setup-surf` skill. Tools with slash-command
+   support can use:
 
    ```text
    /setup-surf
    ```
 
-4. Once setup finishes:
+4. Once setup finishes, ask where to surf or use:
 
    ```text
    /surf tomorrow
    ```
 
-Claude may ask permission before fetching forecast or research websites. Review
-the domain and approve only sources you trust.
+Your AI tool may ask permission before fetching forecast or research websites.
+Review the domain and approve only sources you trust.
+
+`AGENTS.md` is the canonical project instruction file. Portable skills live in
+`.agents/skills/`. Tools that do not discover that path automatically can be
+directed to the relevant `SKILL.md` file.
 
 ## Private data stays private
 
@@ -83,7 +89,7 @@ calibration. It must never contain:
 
 - a contributor's home or accommodation address;
 - raw session rows, names, phone numbers, or vehicle details;
-- private seller messages or transaction history;
+- private shop/seller messages, rental bookings, or transaction history;
 - secret or unpublished breaks;
 - claims presented with more confidence than their evidence supports.
 
@@ -104,14 +110,22 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and the
 Forecasts can be wrong. Check current conditions, local warnings, lifeguards,
 and your own ability before entering the water.
 
-## Board buying
+## Board recommendations
 
-The board tool is profile-driven. It uses weight, ability, successful past
-boards, duck-dive needs, target waves, budget, local availability, and resale
-plans. It does not apply one universal litres-per-kilogram formula to everyone.
+The board workflow is profile-driven. It uses weight, ability, successful and
+unsuccessful past boards, duck-dive needs, target waves, budget, duration, and
+local availability. It does not apply one universal litres-per-kilogram formula
+to everyone.
 
-It can evaluate public listings and prepare questions for a seller. It must not
-contact a seller, make an offer, or purchase anything without explicit approval.
+It recommends the board specification first, independently of how the surfer
+will obtain it. It can then compare:
+
+- new boards and current shop inventory;
+- used boards and their condition;
+- rental boards, including duration, swap policy, and damage terms.
+
+It must not contact a shop, seller, owner, or rental operator; reserve; buy; or
+rent anything without explicit approval.
 
 ## Data providers
 

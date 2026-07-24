@@ -35,6 +35,9 @@
 - Duck-dive priority:
 - Stability priority:
 - Durability priority:
+- Acceptable acquisition modes: new | used | rental | any
+- Board budget:
+- Rental duration, if applicable:
 
 ## Travel
 

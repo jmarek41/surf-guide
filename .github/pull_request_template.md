@@ -10,8 +10,8 @@
 
 - [ ] I ran `./scripts/validate.sh`.
 - [ ] No file under `data/` is included.
-- [ ] No raw sessions, rider profile, exact accommodation, seller message, or
-      contact detail is included.
+- [ ] No raw sessions, rider profile, exact accommodation, shop/seller message,
+      rental booking, or contact detail is included.
 - [ ] Every added break is already publicly documented, or sensitive
       coordinates have been omitted.
 - [ ] Repeated reports from one surfer are counted as one independent

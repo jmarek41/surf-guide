@@ -31,7 +31,7 @@ Private:
 - rider ability, weight, boards, preferences, and hard exclusions;
 - exact accommodation or home;
 - raw sessions and personal narrative;
-- seller details, purchases, and board shortlists;
+- shop/seller details, purchases, rental bookings, and board recommendations;
 - private or unpublished breaks.
 
 Drive time is calculated from the private base at runtime. It should not be

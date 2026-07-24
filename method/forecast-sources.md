@@ -77,9 +77,9 @@ proprietary tables.
 ## MET Norway
 
 MET Norway can be useful, but its API requires an identifying User-Agent and
-responsible caching. Generic Claude WebFetch does not provide reliable header
-control, so it is excluded from the default workflow. A future helper may add it
-only if it follows the official terms.
+responsible caching. Generic AI web-fetch tools do not always provide reliable
+header control, so it is excluded from the default workflow. A future helper
+may add it only if it follows the official terms.
 
 ## Tide
 

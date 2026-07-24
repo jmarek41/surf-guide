@@ -12,11 +12,22 @@ if [ "$tracked_private" != "data/.gitkeep" ]; then
   fail "Only data/.gitkeep may be tracked under data/"
 fi
 
-for skill in setup-surf surf log-session board-buy; do
-  file=".claude/skills/$skill/SKILL.md"
+[ -f "AGENTS.md" ] || fail "Missing canonical AGENTS.md"
+[ -L "CLAUDE.md" ] || fail "CLAUDE.md must be a compatibility symlink"
+[ "$(readlink CLAUDE.md)" = "AGENTS.md" ] || fail "CLAUDE.md must point to AGENTS.md"
+[ -L ".claude/skills" ] || fail ".claude/skills must be a compatibility symlink"
+[ "$(readlink .claude/skills)" = "../.agents/skills" ] ||
+  fail ".claude/skills must point to ../.agents/skills"
+
+for skill in setup-surf surf log-session board-recommend; do
+  file=".agents/skills/$skill/SKILL.md"
   [ -f "$file" ] || fail "Missing $file"
   first_line="$(sed -n '1p' "$file")"
   [ "$first_line" = "---" ] || fail "$file is missing YAML frontmatter"
+  grep -q "^name: $skill$" "$file" ||
+    fail "$file name must match its parent directory"
+  grep -q "^description: " "$file" ||
+    fail "$file is missing a description"
 done
 
 for template in profile.md active-location.md sessions.csv personal-calibration.md; do
@@ -45,6 +56,7 @@ if command -v rg >/dev/null 2>&1; then
   if rg -n \
     -e 'exact accommodation' \
     -e 'seller phone' \
+    -e 'rental booking reference' \
     -e 'raw session row' \
     locations/portugal; then
     fail "Possible private-data language detected in a public location pack"

@@ -1,7 +1,7 @@
 ---
+name: setup-surf
 description: Set up a private rider profile and activate or research a surf region. Use when the user is new, changes destination, or asks to configure surf-guide.
-argument-hint: "[region or base, optional]"
-disable-model-invocation: true
+license: MIT
 ---
 
 # Set up surf-guide
@@ -12,11 +12,11 @@ Configure this clone without publishing personal data.
 
 Read:
 
-- `CLAUDE.md`
+- `AGENTS.md`
 - `templates/profile.md`
 - `templates/active-location.md`
 - `locations/README.md`
-- `$ARGUMENTS`
+- the user's current setup request
 
 Check whether `data/profile.md` and `data/active-location.md` already exist.
 Preserve existing answers unless the user asks to replace them.
@@ -35,7 +35,7 @@ Ask only for missing information, in no more than six numbered questions:
 5. Optional preferences: left/right, beach/point/reef, crowd tolerance, and
    current technique goal.
 6. Current board plus height, weight, and successful/unsuccessful past boards
-   if board-buying help is wanted.
+   if board recommendations are wanted.
 
 Explain that weight and board history are optional for forecasts but useful for
 board selection.
@@ -67,7 +67,7 @@ If it does not exist:
 
 1. Explain that a one-time location research pass is required.
 2. Research a bounded zone of roughly 5–12 established public breaks.
-3. Apply the two-source rule from `CLAUDE.md`.
+3. Apply the two-source rule from `AGENTS.md`.
 4. Create a local draft under
    `data/location-drafts/<country-slug>/<region-slug>/` using
    `locations/_template/`.
