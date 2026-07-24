@@ -14,8 +14,8 @@ by expensive confirmation only for candidates.
 
 ## 2. Phase 1 — batched triage
 
-Build one Open-Meteo Marine multi-location request from the selected catalog
-rows marked `triage`.
+Build one Open-Meteo Marine multi-location request from the selected rows of
+the catalog's Phase-1 triage table.
 
 Set `timezone=auto` so each location's daily aggregates and returned timestamps
 use its local timezone. For multiple coordinates, verify that the response
@@ -46,9 +46,9 @@ The default broad Atlantic triage floor is:
 - primary swell at least 0.8 m and 10 s; or
 - secondary swell at least 0.5 m and 10 s.
 
-For Mediterranean wind-swell catalogs, the default floor is 0.7 m at any
-period. These are discovery defaults, not the final GO bar. A private config may
-raise or lower them.
+For Mediterranean and sheltered south-coast wind-swell cells, the default floor
+is 0.7 m at any period. These are discovery defaults, not the final GO bar. A
+private config may raise or lower them.
 
 Do not apply a size ceiling during triage. Large offshore energy may translate
 into the target range at a documented refuge or shadowed spot.
@@ -64,7 +64,8 @@ For every candidate:
    tide timing. Use tertiary swell only when the selected model provides it;
    Open-Meteo currently documents tertiary components for GFS Wave models.
 2. Fetch hourly atmospheric wind and gusts across the full daylight window.
-3. Compare Open-Meteo best-match with `ncep_gfswave016` when available.
+3. Compare Open-Meteo best-match with `ncep_gfswave016` when available. If that
+   arm is all-null, retry with the global `ncep_gfswave025`.
 4. Check the country's official forecast or a public nearshore surf source.
 5. Apply the destination's exposure/refuge notes.
 6. For class B/C spots, require a nearshore or visual confirmation before a

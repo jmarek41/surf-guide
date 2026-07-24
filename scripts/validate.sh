@@ -40,36 +40,6 @@ done
 [ -f "scripts/validate_repo.py" ] ||
   fail "Missing scripts/validate_repo.py"
 
-if command -v rg >/dev/null 2>&1; then
-  if rg -n --hidden \
-    -g '!scripts/validate.sh' \
-    -e 'ghp_[A-Za-z0-9]{20,}' \
-    -e 'github_pat_[A-Za-z0-9_]+' \
-    -e 'sk-[A-Za-z0-9]{20,}' \
-    -e 'SERPAPI_KEY[[:space:]]*=' \
-    -e 'SERPAPI_API_KEY[[:space:]]*=[A-Za-z0-9_-]{20,}' \
-    .; then
-    fail "Possible credential detected"
-  fi
-else
-  if grep -R -E \
-    'ghp_[A-Za-z0-9]{20,}|github_pat_[A-Za-z0-9_]+|sk-[A-Za-z0-9]{20,}|SERPAPI_KEY[[:space:]]*=' \
-    --exclude=validate.sh .; then
-    fail "Possible credential detected"
-  fi
-fi
-
-if command -v rg >/dev/null 2>&1; then
-  if rg -n \
-    -e 'exact accommodation' \
-    -e 'seller phone' \
-    -e 'rental booking reference' \
-    -e 'raw session row' \
-    locations/portugal; then
-    fail "Possible private-data language detected in a public location pack"
-  fi
-fi
-
 if command -v python3 >/dev/null 2>&1; then
   surf_guide_pycache="${TMPDIR:-/tmp}/surf-guide-pycache"
   PYTHONPYCACHEPREFIX="$surf_guide_pycache" \

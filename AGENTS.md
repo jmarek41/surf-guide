@@ -39,6 +39,7 @@ data.
 - `scan/` — public short-trip destination catalog.
 - `locations/` — contributed public location packs.
 - `templates/` — schemas for local and public data.
+- `scripts/` — offline validation and the optional flight-pricing helper.
 - `data/` — ignored local state created by the skills.
 
 Do not commit or push unless the user explicitly requests it.

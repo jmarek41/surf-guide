@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import argparse
 import io
+import os
 import unittest
 from contextlib import redirect_stderr
 from unittest import mock
@@ -10,6 +11,22 @@ import serpapi_flights
 
 
 class SerpApiFlightsTests(unittest.TestCase):
+    def test_load_key_reads_documented_env_file(self) -> None:
+        with (
+            mock.patch.dict(os.environ, {}, clear=True),
+            mock.patch.object(serpapi_flights, "Path") as path_class,
+        ):
+            secret_file = path_class.return_value
+            secret_file.exists.return_value = True
+            secret_file.read_text.return_value = (
+                "COMMENT=value\nSERPAPI_API_KEY=documented-key\n"
+            )
+
+            key = serpapi_flights.load_key()
+
+        path_class.assert_called_once_with("data/secrets/serpapi.env")
+        self.assertEqual(key, "documented-key")
+
     def test_redact_removes_key_from_nested_payload(self) -> None:
         key = "secret-value"
         payload = {

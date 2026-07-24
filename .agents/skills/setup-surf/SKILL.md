@@ -45,7 +45,8 @@ board selection.
 
 ## 3. Write private configuration
 
-Create or update only:
+When an existing public location pack covers the requested region, create or
+update only:
 
 - `data/profile.md`
 - `data/active-location.md`
@@ -55,6 +56,9 @@ Create or update only:
 
 Use the templates exactly. Store the base only at town/neighbourhood precision.
 Never write private answers under `locations/`.
+
+If no public pack exists, Step 4 may additionally create the private
+`data/location-drafts/<country-slug>/<region-slug>/` tree.
 
 ## 4. Resolve the public location pack
 

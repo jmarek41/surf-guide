@@ -39,6 +39,7 @@ verification studies.
 | Arrifana headland | N-heavy NW swell | Bay can break smaller than fully exposed beaches; this can make it a size refuge | 2 | 1 | Insufficient independent contributors | community-observed | low |
 | Amado north headland | Wind approximately true N | Southern bay may be cleaner than the open cell; shelter weakens when wind backs NNW | 16 checks total across mixed conditions | 1 | Several misses; gusts can penetrate | public-source geometry + community-observed | low-medium |
 | Zavial W/WNW wrap | Longer-period W/WNW | Point/bay can receive more energy than a coarse south-coast reading suggests | 3 | 1 | Size does not guarantee peeling waves; short-period cases failed | community-observed | low |
+| Crossing SE secondary at the Sagres tip | W/NW primary with a significant short-period SE secondary | Exposed Tonel can turn pushy and disorganized beyond what primary alone suggests, while the same SE energy can feed Mareta's sheltered east-corner rights | 2 | 1 | Exact size/period thresholds are single-observation; west-side mirror untested | community-observed | low |
 
 ## Conservative operational rules
 
@@ -109,6 +110,20 @@ Repeated Mareta observations support an east-side right-hand wrap during E/SE
 energy and wind. The mirrored west-side/left-hand behavior on SW energy remains
 an unvalidated prediction.
 
+### Crossing SE secondary at the Sagres tip
+
+When a short-period SE secondary stacks onto the W/NW primary in the Sagres-tip
+cell, evaluate combined height as well as primary swell:
+
+- exposed Tonel can become pushy and harder to paddle, with a polluted face —
+  treat a large stacked combined value as possible step-up territory;
+- the same SE energy can feed Mareta's east-corner wrap, so compare the two
+  before defaulting to the exposed beach.
+
+Both observations come from one contributor within one season. No exact
+secondary size, period, or combined-height threshold is validated for
+publication.
+
 ### Amado and Arrifana N-wind gate
 
 The north-headland refuge worked most plausibly with wind close to true N,
@@ -136,14 +151,22 @@ matter.
 
 ## Source-bias observations
 
-| Source | Condition bucket | Observed bias | Operational response | Contributor count |
-|---|---|---|---|---:|
-| Open-Meteo blended wind | Levante before roughly 09:00 | sometimes too strong | confirm the dawn window with another source | 1 |
-| Open-Meteo wind | exposed west coast morning/midday in established nortada | sometimes too light | use an official/alternate ceiling and visual check | 1 |
-| Open-Meteo wind | exposed west-coast evening lull | lighter value sometimes more accurate than a hotter alternate | do not extend a morning bias into evening | 1 |
-| Surfline size | Beliche on high-energy NW | one substantial undercall | do not let one source veto corroborated high-energy input | 1 |
-| Surf-Forecast size/period | Beliche/Zavial wrap cases | useful nearshore signal | retain the offshore-period artefact gate | 1 |
-| combined wave height | crossing N/NW wind-wave | can overstate clean face | start from primary and secondary components | 1 |
+`≥1` is a conservative lower bound for legacy rows whose private evidence was
+not separately counted before this schema was adopted. Treat those rows as
+evidence debt: do not increase their confidence until exact counts and private
+references are backfilled.
+
+| Source | Condition bucket | Observed bias | Adjustment | Observations | Independent contributors | Counterexamples | Confidence |
+|---|---|---|---|---|---:|---|---|
+| Open-Meteo blended wind | Levante before roughly 09:00 | sometimes too strong | confirm the dawn window with another source | ≥1 (legacy; not separately counted) | 1 | no independent counterexample yet | low |
+| Open-Meteo wind | exposed west coast morning/midday in established nortada | sometimes too light | use an official/alternate ceiling and visual check | ≥1 (legacy; not separately counted) | 1 | evening-lull behavior differs | low |
+| Open-Meteo wind | exposed west-coast evening lull | lighter value sometimes more accurate than a hotter alternate | do not extend a morning bias into evening | ≥1 (legacy; not separately counted) | 1 | morning/midday undercalls do not transfer | low |
+| Surfline size | Beliche on high-energy NW | one substantial undercall | do not let one source veto corroborated high-energy input | 1 | 1 | no general bias established | low |
+| Surf-Forecast size/period | Beliche/Zavial wrap cases | useful nearshore signal | retain the offshore-period artefact gate | ≥1 (legacy; not separately counted) | 1 | a short-offshore-period case was a false positive | low |
+| combined wave height | crossing N/NW wind-wave | can overstate clean face | start from primary and secondary components | ≥1 (legacy; not separately counted) | 1 | no independent counterexample yet | low |
+| Open-Meteo blended wind | forecast near-calm | a "dead calm" reading was sometimes light but not glassy in reality | do not promise a glass-off from this source alone; confirm visually or with a second source | ≥2 (not separately counted) | 1 | no independent counterexample yet | low |
+| Windfinder wind | afternoon Levante peaks | sometimes too light | do not use as the sole tiebreaker on strong-Levante afternoons | 1 | 1 | no independent counterexample yet | low |
+| Open-Meteo swell period | long-period W/WNW wrap events | can under-call period versus nearshore surf sources | when the offshore primary period is at least roughly 7–8 s, prefer the nearshore period reading for wrap spots; below that, apply the artefact gate | 1 | 1 | short-period offshore cases can make nearshore guidance misleading | low |
 
 ## Contribution priority
 

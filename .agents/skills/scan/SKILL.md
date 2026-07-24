@@ -23,8 +23,11 @@ Read:
 - `data/profile.md`
 - `data/scan/config.md`
 - `data/scan/catalog-overlay.md` if it exists
-- `data/scan/scan-log.md`
-- `data/scan/flight-price-log.csv`
+- `data/scan/scan-log.md` if it exists
+- `data/scan/flight-price-log.csv` if it exists
+
+If `data/profile.md` is absent, stop the scan and offer `/setup-surf`; do not
+invent rider ability, surf thresholds, or hard exclusions.
 
 If `data/scan/config.md` is absent, create it from
 `templates/scan-config.md` after asking one compact batch for:
@@ -39,6 +42,10 @@ If `data/scan/config.md` is absent, create it from
 
 Never store an exact home address. Airport codes and an approximate home city
 are sufficient.
+
+Before the first run, create any missing log files from
+`templates/scan-log.md` and `templates/flight-price-log.csv`. Preserve an
+existing log exactly; never replace it with the template.
 
 ## Run
 
