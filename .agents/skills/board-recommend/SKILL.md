@@ -11,9 +11,11 @@ Recommend a board for the user's request using
 
 ## Profile first
 
-Read:
+Read `data/profile.md` first. If it is missing, stop and offer `/setup-surf`;
+do not infer body parameters or ability from repository examples.
 
-- `data/profile.md`
+Then read:
+
 - `data/boards/history.md` if it exists
 - `data/boards/fit-calibration.md` if it exists
 - the active location pack when destination waves matter

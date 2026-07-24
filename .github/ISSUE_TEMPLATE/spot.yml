@@ -8,6 +8,7 @@ body:
     attributes:
       value: |
         Only established public spots. Never include raw sessions, private breaks, exact accommodation, names, or contact details.
+        For an observed model/spot pattern, follow method/calibration-promotion.md and submit only the approved anonymized summary.
   - type: input
     id: region
     attributes:
@@ -27,12 +28,41 @@ body:
     validations:
       required: true
   - type: textarea
+    id: condition
+    attributes:
+      label: Condition bucket
+      description: For calibration, give only the generalized swell direction/period, wind regime, tide stage, and time-of-day bucket. Leave blank for a simple sourced fact.
+  - type: input
+    id: observation_count
+    attributes:
+      label: Observation count
+      description: For community calibration only. Give the aggregate count, not dates or raw rows.
+      placeholder: "Example: 5"
+  - type: input
+    id: contributor_count
+    attributes:
+      label: Independent contributor count
+      description: Repeated sessions from one surfer still count as one contributor.
+      placeholder: "Example: 1"
+  - type: textarea
+    id: counterexamples
+    attributes:
+      label: Counterexamples and uncertainty
+      description: State what did not match and where the rule may fail.
+  - type: textarea
     id: evidence
     attributes:
       label: Evidence
       description: Direct public URLs or anonymized observation and independent-contributor counts.
     validations:
       required: true
+  - type: checkboxes
+    id: privacy
+    attributes:
+      label: Privacy confirmation
+      options:
+        - label: I removed names, raw rows, exact session times, rider/board details, accommodation, bookings, seller messages, and private-break information.
+          required: true
   - type: dropdown
     id: sensitivity
     attributes:

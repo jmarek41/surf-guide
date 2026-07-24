@@ -8,9 +8,13 @@ Coordinates are forecast sampling points or approximate established-break
 locations, not secret spots. Provider identifiers and routes can change; verify
 them live when a destination reaches Phase 2.
 
+The `Reference tier` is a rough European travel-shape hint, not a promise from
+every origin. `/scan` must recalculate it from each user's private origins,
+available schedules, transfers, and connection policy.
+
 ## Destination index
 
-| ID | Region | Tier | Gateway airports | Prime tendency | Catalog confidence |
+| ID | Region | Reference tier | Gateway airports | Prime tendency | Catalog confidence |
 |---|---|---|---|---|---|
 | canaries | Lanzarote + Fuerteventura | short-haul | ACE, FUE | Atlantic winter/shoulder swell | medium-high |
 | lisbon | Ericeira + Peniche | short-haul | LIS | autumn through spring | high |
@@ -122,21 +126,33 @@ may include a subset.
 
 ## Sources
 
-Each destination was seeded from at least two of the following public source
-families. Recheck the exact page before changing a factual field.
+These direct pages are reproducible entry points for the catalog. They do not
+support every field or replace live Phase-2 verification. Spot mechanics that
+have only one relevant source remain single-source even when a second page
+supports regional access or tourism context.
 
-| Destination | Sources |
-|---|---|
-| canaries | Surf-Forecast break pages; Surfline public spot pages; Lanzarote/Fuerteventura tourism and local surf-school guides |
-| lisbon | Surf-Forecast; Surfline public spot pages; Ericeira World Surfing Reserve; Peniche municipal/tourism guides |
-| north-portugal | Surf-Forecast; Surfline public spot pages; municipal and local surf-school guides |
-| sagres | `locations/portugal/sagres/sources.md`; Surf-Forecast |
-| cadiz | Surf-Forecast; Surfline public spot pages; Andalucía/local surf-school guides |
-| southwest-france | Surf-Forecast; Surfline public spot pages; Landes and Biarritz tourism/local guides |
-| basque | Surf-Forecast; Surfline public spot pages; Basque tourism/local surf guides |
-| morocco | Surf-Forecast; Surfline public spot pages; Moroccan/local surf-camp guides |
-| rome | Surf-Forecast Banzai; Surfline public spot pages; Italian surf guides |
-| sardinia | Surf-Forecast; Surfline public spot pages; Sardinian surf-school and tourism guides |
+| Destination | Direct source | Retrieved | Supports |
+|---|---|---|---|
+| canaries | [Surf-Forecast — Famara](https://www.surf-forecast.com/breaks/Playade-Famara_1) | 2026-07-24 | representative break orientation and nearshore forecast |
+| canaries | [Turismo Lanzarote — Famara](https://turismolanzarote.com/playa/playa-de-famara/) | 2026-07-24 | official beach and access context |
+| lisbon | [Surf-Forecast — Ribeira d'Ilhas](https://www.surf-forecast.com/breaks/Ribeira-Dilhas) | 2026-07-24 | representative break and nearshore forecast |
+| lisbon | [Visit Portugal — Ericeira Surfing Reserve](https://www.visitportugal.com/en/content/ericeira-surfing-reserve) | 2026-07-24 | official regional surf context and named breaks |
+| north-portugal | [Surf-Forecast — Matosinhos](https://www.surf-forecast.com/breaks/Matosinhos) | 2026-07-24 | representative break and nearshore forecast |
+| north-portugal | [Matosinhos municipality beach guide](https://www.cm-matosinhos.pt/cmmatosinhos2020/uploads/writer_file/document/24234/beach_guide.pdf) | 2026-07-24 | official beach and surf context |
+| sagres | [Sagres location-pack sources](../locations/portugal/sagres/sources.md) | 2026-07-24 | 66 numbered public references, including spot pages and regional indexes |
+| sagres | [Surf-Forecast — Tonel](https://www.surf-forecast.com/breaks/Tonel) | 2026-07-24 | exposed anchor and nearshore forecast |
+| cadiz | [Surf-Forecast — El Palmar](https://www.surf-forecast.com/breaks/Playa-El-Palmar) | 2026-07-24 | representative break and nearshore forecast |
+| cadiz | [Cádiz tourism — El Palmar](https://www.cadizturismo.com/es/playas/el-palmar) | 2026-07-24 | official beach and surf context |
+| southwest-france | [Surf-Forecast — Les Bourdaines](https://www.surf-forecast.com/breaks/Les-Bourdaines) | 2026-07-24 | representative exposed break |
+| southwest-france | [Hossegor tourism — beaches](https://www.hossegor.fr/en/the-beaches/) | 2026-07-24 | official beach, access, and regional surf context |
+| basque | [Surf-Forecast — Zarautz](https://www.surf-forecast.com/breaks/Zarautz) | 2026-07-24 | representative break and nearshore forecast |
+| basque | [Basque tourism — Surfing Euskadi](https://turismo.euskadi.eus/en/surfing-euskadi/) | 2026-07-24 | official regional surf and skill-range context |
+| morocco | [Surf-Forecast — Devil's Rock](https://www.surf-forecast.com/breaks/Devils-Rock) | 2026-07-24 | representative break and nearshore forecast |
+| morocco | [Moroccan tourism — Agadir–Taghazout](https://www.visitmorocco.com/en/travel/agadir-taghazout/beach) | 2026-07-24 | official regional surf context |
+| rome | [Surf-Forecast — Banzai](https://www.surf-forecast.com/breaks/Banzai_2) | 2026-07-24 | representative reef and nearshore forecast |
+| rome | [Visit Lazio](https://www.visitlazio.com/en/) | 2026-07-24 | official regional context only; detailed surf mechanics remain single-source |
+| sardinia | [Surf-Forecast — Capo Mannu](https://www.surf-forecast.com/breaks/Capo-Mannu) | 2026-07-24 | representative point and nearshore forecast |
+| sardinia | [Sardegna Turismo — wind and waves](https://www.sardegnaturismo.it/en/search-wind-and-waves?language=en-gb) | 2026-07-24 | official Mistral, west-coast, and Capo Mannu context |
 
 ## Known limitations
 

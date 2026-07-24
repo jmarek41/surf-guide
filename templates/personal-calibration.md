@@ -14,5 +14,21 @@
 
 ## Candidate public lessons
 
-Generalized lessons may be drafted here. They must not be copied into
-`locations/` without explicit user review and approval.
+Generalized lessons may be drafted here. Evidence references in this table stay
+private and must not be copied into `locations/`.
+
+| Candidate ID | Public spot | Condition bucket | Proposed generalized behaviour | Observations | Independent contributors | Counterexamples / uncertainty | Evidence refs (private) | Target public file | Status |
+|---|---|---|---|---:|---:|---|---|---|---|
+
+Allowed status values:
+
+- `needs-more-evidence`
+- `candidate`
+- `proposed`
+- `approved`
+- `declined`
+- `promoted`
+
+Only explicit user approval can move an entry to `approved`. Mark it `promoted`
+only after the anonymized rule has actually been added to the public location
+calibration. Follow `method/calibration-promotion.md`.

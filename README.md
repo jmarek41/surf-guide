@@ -26,8 +26,8 @@ The repository deliberately separates two kinds of knowledge:
   candidates.
 
 The workflows follow the open [Agent Skills](https://agentskills.io/) `SKILL.md`
-format. There is no application server, account, database, API key, or build
-step.
+format. There is no application server, account, database, required API key, or
+build step.
 
 ## Quick start
 
@@ -111,6 +111,15 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) and the
 - Prefer an honest uncertainty label over a false recommendation.
 - Ground truth from sessions improves private calibration; only anonymized,
   generalizable lessons belong in public location packs.
+
+The promotion path is deliberately review-gated:
+
+```text
+private raw session → private candidate lesson → approved public calibration
+```
+
+See [calibration promotion](method/calibration-promotion.md) for evidence,
+privacy, contributor-count, and approval rules.
 
 Forecasts can be wrong. Check current conditions, local warnings, lifeguards,
 and your own ability before entering the water.

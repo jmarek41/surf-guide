@@ -50,13 +50,14 @@ where publication could cause harm.
 
 ## Promoting a session lesson
 
-Raw sessions remain under `data/`. If a repeatable pattern may help everyone:
+Raw sessions remain under `data/`. Follow
+`method/calibration-promotion.md` when a repeatable pattern may help everyone:
 
-1. Remove the rider, board, exact session time, accommodation, and narrative.
-2. State the condition bucket: swell direction/period, wind regime, and tide.
-3. State the observation count and number of independent contributors.
-4. Describe uncertainty and counterexamples.
-5. Add the generalized rule to the relevant public `calibration.md`.
+1. Keep raw evidence and its references in private data.
+2. Maintain a private candidate with a stable ID and status.
+3. Draft the exact anonymous public rule and target file.
+4. Obtain explicit user approval for that text.
+5. Add the approved rule to the relevant public `calibration.md`.
 
 Never automate this promotion or include the raw CSV in a PR.
 

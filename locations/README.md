@@ -36,3 +36,13 @@ Private:
 
 Drive time is calculated from the private base at runtime. It should not be
 hard-coded into a shared pack.
+
+## Improving a pack from sessions
+
+Raw observations improve private calibration immediately. Reusable model,
+geometry, wind-shelter, wrap, or tide-stage lessons can later be proposed for
+the shared pack through `method/calibration-promotion.md`.
+
+The public entry carries aggregate observations, independent-contributor count,
+counterexamples, evidence label, and confidence. The private evidence trail
+stays under `data/`, and promotion always requires explicit user approval.

@@ -28,6 +28,9 @@ data.
   the rider profile defines a hard exclusion.
 - Treat raw session observations as ground truth for that surfer's local
   calibration, not as universal truth.
+- Follow `method/calibration-promotion.md` when a private observation may help
+  other surfers. Keep the raw evidence private, maintain contributor counts,
+  and require explicit user approval before editing a public calibration.
 
 ## Repository map
 
