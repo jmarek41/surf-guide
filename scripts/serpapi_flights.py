@@ -97,6 +97,10 @@ def main() -> None:
         print(f"SerpAPI request failed: {type(error).__name__}", file=sys.stderr)
         raise SystemExit(2) from None
 
+    if isinstance(payload, dict) and payload.get("error"):
+        print("SerpAPI API error: request was rejected", file=sys.stderr)
+        raise SystemExit(2)
+
     json.dump(redact(payload, key), sys.stdout, indent=2, ensure_ascii=False)
     sys.stdout.write("\n")
 

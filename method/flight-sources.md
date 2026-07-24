@@ -135,6 +135,17 @@ sources conflict.
 Always emit browser links for the configured origins. A missing API key or
 failed pricing source must not suppress a confirmed surf opportunity.
 
+Build a normal Google Flights search URL from public route/date inputs, for
+example:
+
+```text
+https://www.google.com/travel/flights?q=Flights%20from%20PRG%20to%20LIS%20on%202026-10-08%20return%202026-10-11&curr=EUR
+```
+
+URL-encode the query, substitute each private origin, and use explicit outbound
+and return dates. The link is a browser handoff, not evidence of availability
+or price; label it accordingly.
+
 ## Failure handling
 
 - Missing key: skip SerpAPI and explain the fallback.

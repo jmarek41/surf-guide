@@ -10,15 +10,24 @@ Record the user's session report as private ground truth.
 
 ## Load
 
-Read:
+Read `data/active-location.md` first.
 
-- `data/active-location.md`
+If it is missing, tell the user to run `/setup-surf`.
+
+If its status is `none`, stop before resolving any region paths. Explain that
+there is no active destination and offer either:
+
+- `/setup-surf` to activate the next trip; or
+- logging against a named archived region, but only after the user explicitly
+  identifies that region.
+
+For an active destination, verify that the region slug and every configured
+session/calibration path are non-empty. Then read:
+
 - `templates/sessions.csv`
 - the active `data/sessions/<region>.csv`
 - the active `data/sessions/<region>.md`
 - the active `data/calibration/<region>.md`
-
-If setup is missing, tell the user to run `/setup-surf`.
 
 ## Clarify
 
@@ -45,19 +54,37 @@ Append:
 Update `data/calibration/<region>.md` only when the observation changes a useful
 private rule. Preserve counterexamples and evidence counts.
 
+## Evaluate a reusable lesson
+
+Follow `method/calibration-promotion.md` after updating the private record.
+Classify the result as:
+
+- personal-only;
+- needs more evidence;
+- candidate public lesson; or
+- update to an existing candidate.
+
+For a candidate, add or update a stable entry in the private calibration's
+`Candidate public lessons` table. Keep its evidence references private. Draft a
+separate anonymized public rule with:
+
+- public spot name and condition bucket;
+- generalized model or geometry behaviour;
+- observation count and independent-contributor count;
+- counterexamples, uncertainty, evidence label, and confidence;
+- the target `locations/<country>/<region>/calibration.md`.
+
+Do not edit `locations/` during session logging. Show the proposed public rule
+to the user and ask for explicit approval in a later contribution step.
+
 ## Privacy
 
 Do not write raw sessions under `locations/`. If a lesson appears broadly
-useful, separately offer an anonymized summary:
-
-- condition bucket;
-- generalized observation;
-- number of sessions;
-- number of independent contributors;
-- uncertainty and counterexamples.
+useful, separately offer the anonymized proposal described above.
 
 Preparing a public contribution requires explicit approval. Repeated sessions
 from this user still count as one independent contributor.
 
 Finish by summarizing what was logged and which private calibration rule, if
-any, changed.
+any, changed. Also report the candidate lesson status without implying that it
+has already been published.

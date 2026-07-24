@@ -6,6 +6,10 @@
 
 <!-- Link direct sources. Distinguish multi-source, single-source, observation, and inference. -->
 
+For community calibration, include the condition bucket, aggregate observation
+count, independent-contributor count, counterexamples, evidence label, and
+confidence. Do not include private evidence references.
+
 ## Privacy and sensitivity checklist
 
 - [ ] I ran `./scripts/validate.sh`.

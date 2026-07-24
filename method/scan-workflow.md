@@ -17,6 +17,11 @@ by expensive confirmation only for candidates.
 Build one Open-Meteo Marine multi-location request from the selected catalog
 rows marked `triage`.
 
+Set `timezone=auto` so each location's daily aggregates and returned timestamps
+use its local timezone. For multiple coordinates, verify that the response
+contains one timezone-resolved object per requested coordinate before comparing
+calendar dates.
+
 Use daily:
 
 ```text
@@ -29,6 +34,12 @@ Also request three-hourly:
 ```text
 secondary_swell_wave_height,secondary_swell_wave_period
 ```
+
+Request the configured 7–10-day window, then verify the returned date arrays
+instead of assuming the provider supplied the full horizon. If the provider or
+selected model returns fewer days, scan only the received dates and report the
+shortened horizon. Days 8–10 remain direction-of-travel evidence even when
+available.
 
 The default broad Atlantic triage floor is:
 
@@ -49,8 +60,9 @@ the remaining triage hits as not yet deep-checked.
 
 For every candidate:
 
-1. Fetch hourly primary, secondary, tertiary, combined, and wind-wave
-   components plus MSL tide timing.
+1. Fetch hourly primary, secondary, combined, and wind-wave components plus MSL
+   tide timing. Use tertiary swell only when the selected model provides it;
+   Open-Meteo currently documents tertiary components for GFS Wave models.
 2. Fetch hourly atmospheric wind and gusts across the full daylight window.
 3. Compare Open-Meteo best-match with `ncep_gfswave016` when available.
 4. Check the country's official forecast or a public nearshore surf source.
@@ -84,6 +96,9 @@ The default template distinguishes:
 - short-haul: roughly half a day each way;
 - long-haul: roughly one day each way;
 - routes with a connection: recalculate rather than trusting the catalog tier.
+
+Catalog tiers are reference hints only. Compute the effective tier from the
+private origins, schedules, transfers, and trip limits on every scan.
 
 Count usable surf days after realistic arrival, transfer, board pickup, return,
 and flight times.

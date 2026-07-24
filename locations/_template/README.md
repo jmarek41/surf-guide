@@ -31,6 +31,6 @@
 - Confidence:
 - Evidence label:
 - Sources: use numbered references from `sources.md`
-- Unknowns:
+- Unknowns (optional when uncertainty is not already captured above):
 
 Leave unsupported fields blank. Label geometry deductions as inference.

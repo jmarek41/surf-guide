@@ -7,6 +7,14 @@ answers must include a nearby link such as:
 
 > Weather data by [Open-Meteo.com](https://open-meteo.com/)
 
+Marine answers must also follow the acknowledgement shown by the current
+[Marine Weather API documentation](https://open-meteo.com/en/docs/marine-weather-api)
+for the model actually used. For example, the documented ICON Wave output
+requires attribution to the
+[German Weather Service (DWD)](https://www.dwd.de/) as well as Open-Meteo.
+Named GFS, ECMWF, or Météo-France requests should credit the upstream provider
+identified in the current Open-Meteo data-source table.
+
 The free API is for non-commercial use and has usage limits. Review the current
 [terms](https://open-meteo.com/en/terms) and
 [license](https://open-meteo.com/en/license).
