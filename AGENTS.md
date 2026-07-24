@@ -33,6 +33,7 @@ data.
 
 - `.agents/skills/` — portable Agent Skills workflows.
 - `method/` — shared forecasting and board-selection methods.
+- `scan/` — public short-trip destination catalog.
 - `locations/` — contributed public location packs.
 - `templates/` — schemas for local and public data.
 - `data/` — ignored local state created by the skills.

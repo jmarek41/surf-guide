@@ -36,3 +36,13 @@ Use its normal browser interface only when permitted.
 Every location pack maintains its own source list. A source link documents the
 origin of a factual claim; it does not imply that the source endorses this
 project.
+
+## SerpAPI Google Flights
+
+Optional flight pricing uses the user's own SerpAPI account and its documented
+Google Flights engine:
+
+https://serpapi.com/google-flights-api
+
+Do not publish API keys or cached private itineraries. SerpAPI and Google retain
+their respective terms and marks.

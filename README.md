@@ -21,6 +21,9 @@ The repository deliberately separates two kinds of knowledge:
   improve over time.
 - `/board-recommend [request or option]` — recommends a board, then evaluates
   matching new, used, or rental options.
+- `/scan [window or destination]` — scans configured destinations for
+  exceptional short-trip windows and prices flights only for confirmed
+  candidates.
 
 The workflows follow the open [Agent Skills](https://agentskills.io/) `SKILL.md`
 format. There is no application server, account, database, API key, or build
@@ -67,7 +70,9 @@ data/
 ├── active-location.md
 ├── sessions/
 ├── calibration/
-└── boards/
+├── boards/
+├── scan/
+└── secrets/
 ```
 
 The whole directory is ignored except for `data/.gitkeep`. Do not force-add it.
@@ -127,6 +132,25 @@ will obtain it. It can then compare:
 It must not contact a shop, seller, owner, or rental operator; reserve; buy; or
 rent anything without explicit approval.
 
+## Short-trip scans
+
+`/scan` uses a cheap batched swell pass, then deep-confirms only promising
+destinations. Personal origin airports, trip limits, scan history, prices, and
+bookings remain under `data/`.
+
+Surf scanning uses keyless public forecast sources. Automated all-carrier
+flight pricing is optional and uses each user's own
+[SerpAPI](https://serpapi.com/users/sign_up) key:
+
+1. Retrieve the key from the
+   [SerpAPI dashboard](https://serpapi.com/manage-api-key).
+2. Store `SERPAPI_API_KEY=<value>` in ignored
+   `data/secrets/serpapi.env`.
+3. Restrict the file to its owner: `chmod 600 data/secrets/serpapi.env`.
+
+Never paste the key into a prompt or commit it. Without a key, `/scan` still
+returns surf opportunities and browser-ready Google Flights links.
+
 ## Data providers
 
 The default workflow uses Open-Meteo and may use national meteorological
@@ -141,6 +165,7 @@ Issues and pull requests are welcome. Useful contributions include:
 - a correction to exposure, hazards, access, or forecast behaviour;
 - an anonymized calibration lesson supported by observations;
 - improvements to the forecast or board-selection methodology;
+- sourced scan destinations or improvements to the short-trip workflow;
 - fixes to source URLs or provider mechanics.
 
 Please do not contribute raw personal data or expose sensitive breaks.

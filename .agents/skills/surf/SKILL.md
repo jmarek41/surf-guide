@@ -15,7 +15,11 @@ Answer the user's “where and when should I surf?” request.
 2. State the weekday and full date at the top.
 3. Read `data/profile.md` and `data/active-location.md`.
 4. If either is missing, stop and tell the user to run `/setup-surf`.
-5. Read the active public location pack or local draft, then:
+5. If active-location status is `none`, stop, explain that no destination is
+   active, and offer `/setup-surf` for the next trip.
+6. Read the active public location pack or local draft plus every listed
+   private location overlay. Private overlays may add spots and personal
+   logistics; they do not silently rewrite sourced public facts. Then read:
    - `method/forecast-workflow.md`
    - `method/forecasting-principles.md`
    - `method/forecast-sources.md`

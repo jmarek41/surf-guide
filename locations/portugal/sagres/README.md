@@ -14,11 +14,13 @@ include a rider base or drive times.
 
 | Cell ID | Latitude | Longitude | Spots represented | Notes |
 |---|---:|---:|---|---|
-| west-north | 37.294 | -8.872 | Arrifana | Bay/headland translation required |
-| west-central | 37.166 | -8.904 | Amado | Shared offshore input; local wind shelter differs by section |
+| west-far-north | 37.360 | -8.860 | Monte Clérigo | Exposed beach; banks vary |
+| west-north | 37.294 | -8.872 | Arrifana, Vale Figueiras | Bay/headland translation required at Arrifana |
+| west-central | 37.170 | -8.910 | Bordeira, Amado, Murração | Shared offshore input; local wind shelter differs |
 | west-south | 37.105 | -8.944 | Cordoama, Castelejo | Exposed west-coast beaches |
+| cape-west | 37.035 | -8.990 | Telheiro, Ponta Ruiva | Cape shadow and poor access |
 | sagres-tip | 37.007 | -8.953 | Tonel, Beliche | Same regional input; radically different cape exposure |
-| south-east | 37.050 | -8.860 | Zavial | W/WNW wrap and south-swell behaviour |
+| south-coast | 37.050 | -8.860 | Mareta, Barranco, Ingrina, Zavial, Cabanas Velhas | W/WNW wrap and south-swell behaviour |
 
 ## Spots
 
@@ -164,6 +166,201 @@ include a rider base or drive times.
 - Confidence: high for section/hazard distinction; medium for wrap size
 - Evidence label: multi-source plus community-observed calibration
 - Sources: S24–S27
+
+### Praia de Monte Clérigo
+
+- Slug: `monte-clerigo`
+- Approximate coordinates: `37.340, -8.855`
+- Orientation: west/northwest
+- Wave type / bottom: exposed multi-peak beach break
+- Exposure class: A
+- Supported swell: W to NW, with some SW exposure
+- Supported wind: E/SE/NE offshore; little shelter from summer N wind
+- Tide: low-to-mid is the repeated starting point; banks change
+- Sections and skill: approachable when small, punchier as swell increases
+- Hazards: rips, shifting banks, river influence after rain
+- Access: formal public parking and short boardwalk/stair access
+- Crowd/localism: generally less concentrated than Arrifana
+- Confidence: medium
+- Evidence label: multi-source for wave/access; crowd evidence is thinner
+- Sources: S28–S30
+
+### Praia de Vale Figueiras
+
+- Slug: `vale-figueiras`
+- Approximate coordinates: `37.270, -8.865`
+- Orientation: west
+- Wave type / bottom: long exposed multi-peak beach break
+- Exposure class: A
+- Supported swell: W/NW, with SW exposure
+- Supported wind: E/SE offshore
+- Tide: works across stages; mid is the safest documented starting point
+- Sections and skill: multiple banks; lower tide and more swell increase power
+- Hazards: strong rips, heavy low-tide banks, no facilities
+- Access: several kilometres of rough dirt road, then a short flat sand walk;
+  community reports describe careful normal-car access, but road condition
+  requires live checking
+- Crowd/localism: usually low because of access friction and multiple peaks
+- Confidence: medium-high
+- Evidence label: multi-source
+- Sources: S31–S34
+
+### Praia da Bordeira
+
+- Slug: `bordeira`
+- Approximate coordinates: `37.185, -8.905`
+- Orientation: west/northwest
+- Wave type / bottom: long beach break plus a south-end left near the river
+- Exposure class: C — exposed beach, section-specific wrap near the cliff
+- Supported swell: W/NW
+- Supported wind: E/SE offshore; highly exposed to prevailing N wind
+- Tide: beach-break rights have a broad mid-to-high consensus; point guidance
+  is contested and must be checked visually
+- Sections and skill: beach peaks can suit developing surfers when moderate;
+  the south point and larger surf are more demanding
+- Hazards: rips, long walks, river-mouth currents, rocks/cliff near the point
+- Access: public lots with boardwalk/dune access; some routes involve a
+  substantial return walk
+- Crowd/localism: the long beach disperses surfers; the point concentrates them
+- Confidence: high for exposure/access, low for one universal tide rule
+- Evidence label: multi-source with an explicit source disagreement
+- Sources: S35–S39
+
+### Praia da Murração
+
+- Slug: `murracao`
+- Approximate coordinates: `37.145, -8.912`
+- Orientation: west
+- Wave type / bottom: remote exposed beach; detailed section data is limited
+- Exposure class: A
+- Supported swell: W/NW
+- Supported wind: E offshore
+- Tide: unknown; insufficient consistent evidence
+- Sections and skill: insufficient evidence for an improver-friendly section
+- Hazards: isolation, currents, no lifeguard or easy bail-out
+- Access: long rough unsigned track; high-clearance/4×4 guidance is common
+- Crowd/localism: normally very low
+- Confidence: low
+- Evidence label: established public beach, but surf detail is single-source or
+  unverified
+- Sources: S40–S41
+
+### Praia da Mareta
+
+- Slug: `mareta`
+- Approximate coordinates: `37.005, -8.939`
+- Forecast sampling cell: `37.050, -8.860`
+- Orientation: south
+- Wave type / bottom: sheltered beach break with shifting sand peaks
+- Exposure class: C — south swell and wrapped west energy behave differently
+- Supported swell: S/SE wind-swell; larger W/NW can wrap
+- Supported wind: N/NE offshore; cliff shelter is section-specific
+- Tide: low-to-mid has repeated support; higher water can increase closeouts
+- Sections and skill: generally softer at modest size, but can become powerful
+- Hazards: shorebreak, shifting banks, seasonal beach traffic
+- Access: established town parking and short ramp access
+- Crowd/localism: schools and visitors can concentrate mid-morning
+- Confidence: high for basic behavior; medium for wrap translation
+- Evidence label: multi-source plus one-contributor calibration
+- Sources: S42–S46
+
+### Praia do Telheiro
+
+- Slug: `telheiro`
+- Approximate coordinates: `37.030, -8.980`
+- Orientation: west/southwest near Cape St Vincent
+- Wave type / bottom: remote beach with rock influence
+- Exposure class: B — cape shadow affects NW energy
+- Supported swell: W/NW, subject to shadow
+- Supported wind: E/NE offshore
+- Tide: unknown; below the two-source threshold
+- Sections and skill: generally described as intermediate or above
+- Hazards: isolation, rocks, difficult emergency access
+- Access: steep worn-rock scramble without formal stairs; repeatedly described
+  as difficult with a board
+- Crowd/localism: very low
+- Confidence: medium for access, low for tide and exact size translation
+- Evidence label: multi-source access; incomplete surf calibration
+- Sources: S47–S49
+
+### Praia da Ponta Ruiva
+
+- Slug: `ponta-ruiva`
+- Approximate coordinates: `37.040, -9.000`
+- Orientation: west/northwest
+- Wave type / bottom: left point/reef plus beach A-frames
+- Exposure class: C — point wrap and cape shadow are direction-sensitive
+- Supported swell: W/NW
+- Supported wind: E/NE offshore
+- Tide: main point is commonly placed at mid-to-high; bay peaks vary
+- Sections and skill: point is intermediate/advanced; bay peaks can be more
+  accessible when modest
+- Hazards: reef/rocks, isolation, degraded dirt-road access
+- Access: rough tracks; multiple sources advise against low-clearance rentals
+- Crowd/localism: low when dormant but can concentrate quickly when the point
+  works
+- Confidence: medium-high
+- Evidence label: multi-source, with limited empirical size calibration
+- Sources: S50–S54
+
+### Praia do Barranco
+
+- Slug: `barranco`
+- Approximate coordinates: `37.050, -8.850`
+- Orientation: south/southwest cove
+- Wave type / bottom: point-like right and left over mixed reef, rock, and sand
+- Exposure class: C — requires S/SW or enough long-period W wrap
+- Supported swell: S/SW; large W groundswell can wrap
+- Supported wind: N/NE/NW offshore
+- Tide: mid-stage is the repeated starting point
+- Sections and skill: can be slower and more approachable at modest size;
+  becomes hazardous with more energy
+- Hazards: reef on both sides, rip, isolation, weak phone/rescue access
+- Access: several kilometres of rough branching dirt track and a short steep
+  descent
+- Crowd/localism: generally low; access is a natural crowd filter
+- Confidence: high that it is a real but inconsistent surf spot; medium on
+  precise thresholds
+- Evidence label: multi-source
+- Sources: S55–S59
+
+### Praia da Ingrina
+
+- Slug: `ingrina`
+- Approximate coordinates: `37.045, -8.880`
+- Orientation: south
+- Wave type / bottom: small beach break plus a rock/reef-influenced left
+- Exposure class: C
+- Supported swell: S/SW
+- Supported wind: N, with NE/NW variants
+- Tide: low to low-mid has the strongest support
+- Sections and skill: inside beach can be softer at small size; outside/rock
+  sections become fast and technical
+- Hazards: shallow rocks, strong water movement in the compact bay
+- Access: established parking and short, gentle public access
+- Crowd/localism: usually low, with occasional school use
+- Confidence: medium-high
+- Evidence label: multi-source; sources disagree on how broadly beginner
+  friendly the breaking wave is
+- Sources: S60–S64
+
+### Praia das Cabanas Velhas
+
+- Slug: `cabanas-velhas`
+- Approximate coordinates: `37.065, -8.790`
+- Orientation: south
+- Wave type / bottom: occasional beach break over sand and boulders
+- Exposure class: C
+- Supported swell: S swell or substantial W/NW wrap
+- Supported wind: N offshore
+- Tide: unknown; sandbanks and source coverage are insufficient
+- Sections and skill: no stable section guidance
+- Hazards: sharp boulders on entry/exit
+- Access: public road/dirt approach, parking, and short flat walk
+- Crowd/localism: normally low
+- Confidence: low
+- Evidence label: established public beach; surf behavior incompletely sourced
+- Sources: S65–S66
 
 ## Important limitations
 
