@@ -1,0 +1,22 @@
+# Personal surf data
+data/*
+!data/.gitkeep
+
+# Credentials and local configuration
+.env
+.env.*
+*.key
+*.pem
+*token*
+*secret*
+
+# Operating-system and editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Temporary output
+*.tmp
+*.log
+__pycache__/

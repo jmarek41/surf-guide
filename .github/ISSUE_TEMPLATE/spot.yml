@@ -1,0 +1,45 @@
+name: Spot or calibration proposal
+description: Propose a sourced public spot fact or anonymized calibration lesson
+title: "[Spot]: "
+labels:
+  - spot-data
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Only established public spots. Never include raw sessions, private breaks, exact accommodation, names, or contact details.
+  - type: input
+    id: region
+    attributes:
+      label: Country and region
+    validations:
+      required: true
+  - type: input
+    id: spot
+    attributes:
+      label: Public spot name
+    validations:
+      required: true
+  - type: textarea
+    id: change
+    attributes:
+      label: Proposed fact or generalized rule
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: Direct public URLs or anonymized observation and independent-contributor counts.
+    validations:
+      required: true
+  - type: dropdown
+    id: sensitivity
+    attributes:
+      label: Is this already a well-published break?
+      options:
+        - "Yes — documented by multiple established public sources"
+        - "Uncertain — maintainer should review sensitivity"
+        - "No — do not publish coordinates"
+    validations:
+      required: true

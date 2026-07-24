@@ -1,0 +1,1 @@
+date,spot,session_type,board,time_in,time_out,observed_face_height,observed_quality,swell_dir_deg,swell_height_m,swell_period_s,secondary_dir_deg,secondary_height_m,secondary_period_s,wind_dir_deg,wind_speed_kmh,wind_source,tide_stage,forecast_verdict,reality_verdict,api_vs_reality,lesson_tag,note
