@@ -1,0 +1,1 @@
+scan_date,checked_datetime_utc,origin,dest_airport,carrier_code,source,out_date,out_fare,in_date,in_fare,round_trip_total,currency,route_median,route_p25,price_level,typical_low,typical_high,verdict,booked,note

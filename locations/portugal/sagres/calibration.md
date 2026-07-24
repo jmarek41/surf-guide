@@ -5,6 +5,31 @@ the rider profile, board history, base, and personal narrative are not included.
 All current observations come from one independent contributor, even where the
 same pattern repeated many times.
 
+## Evidence baseline
+
+The private source log contains 67 spot checks across 40 dates. Aggregate
+forecast-versus-reality verdicts are 35 hits, 14 partials, and 18 misses.
+Publishing those aggregates does not publish session times, the board used,
+travel base, or personal performance.
+
+| Spot | Hits / checks | Operational use | Confidence |
+|---|---:|---|---|
+| Tonel | 8 / 8 | exposed regional anchor | medium-high |
+| Cordoama | 3 / 4 | broadly trust exposed input | medium |
+| Mareta | 6 / 9 | use south-coast cell, then section geometry | medium |
+| Beliche | 11 / 17 | derate/cross-check by direction and period | medium |
+| Arrifana | 2 / 5 | headland translation required | low-medium |
+| Castelejo | 1 / 3 | exposed size, banks/wind still uncertain | low |
+| Amado | 4 / 16 | coarse grid is weak on section-level wind shelter | low |
+| Zavial | 0 / 3 | never commit from the offshore grid alone | low |
+
+The table includes spots with at least three checks. Two one-off checks are
+retained in the private aggregate totals but are not enough to publish a
+spot-level success rate.
+
+These are repeated observations from one contributor, not independent forecast
+verification studies.
+
 ## Source/geometry rules
 
 | Source or geometry | Condition bucket | Generalized behaviour | Observations | Independent contributors | Counterexamples | Evidence label | Confidence |
@@ -30,6 +55,25 @@ share breaking-wave size:
 
 Do not publish an exact multiplier until independent observations support it.
 
+### Beliche direction/period buckets
+
+The following is a one-contributor working calibration. Use it as a prior, then
+confirm nearshore:
+
+| Offshore primary direction | Working behavior | Counterexample requirement |
+|---|---|---|
+| deep W, approximately 295° or less | energy commonly reaches the bay when primary period is at least roughly 7 s | a sub-6 s case was flat despite westerly direction |
+| 296–305° | plausible with sufficient size/period | small or short-period edge cases can be weak |
+| 306–310° | energy-gated; longer period materially improves consistency | short-period or dominant N/NW wind-wave can overstate the face |
+| 311°+ | normally deep shadow unless offshore energy is substantial | high-energy NW produced surf despite the shadow |
+
+Across roughly 14 relevant checks, provisional offshore-primary-to-face
+translations clustered around 0.7–0.9× for deep W and 0.5–0.6× near the shadow
+edge. These are not universal multipliers and require independent validation.
+
+Always start from primary swell. A large N/NW wind-wave can inflate combined
+height without wrapping into clean Beliche surf.
+
 ### Amado wind shelter
 
 Treat the N-headland shelter as a narrow possibility, not a guarantee:
@@ -44,6 +88,62 @@ Treat the N-headland shelter as a narrow possibility, not a guarantee:
 Long-period W/WNW can wrap into Zavial despite a south-facing bay. Confirm with a
 nearshore source. A size signal does not prove that beach peaks will peel; add a
 closeout/section-quality warning.
+
+Use a period gate on the nearshore signal: when the offshore primary is only
+about 5 s, an apparent long-period nearshore value has produced a false
+positive. With offshore primary at least roughly 7–8 s, long-period W/WNW
+nearshore guidance has been more useful.
+
+## Additional geometry rules
+
+### Mareta and south-facing cliff bays
+
+South-facing bays with cliffs at both ends can have a narrow sheltered/peeling
+corner while the open middle is disorganized:
+
+- the upwind cliff shelters its lee;
+- the cliff first contacted by the swell can create the wrap;
+- the useful corner changes with wind and swell direction.
+
+Repeated Mareta observations support an east-side right-hand wrap during E/SE
+energy and wind. The mirrored west-side/left-hand behavior on SW energy remains
+an unvalidated prediction.
+
+### Amado and Arrifana N-wind gate
+
+The north-headland refuge worked most plausibly with wind close to true N,
+roughly 340–360°. It failed repeatedly as wind backed NNW, approximately
+320–340°, or as gusts penetrated the bay.
+
+At Arrifana the useful shelter can be dawn-only on a day when wind direction
+backs after sunrise. Treat this as a timing-sensitive visual-check rule, not a
+daily wind multiplier.
+
+### Bordeira versus Amado
+
+Bordeira and Amado can share very similar offshore input but diverge in wind:
+
+- Bordeira's open beach takes the prevailing N wind directly;
+- Amado's southern section may receive narrow true-N shelter;
+- the shelter must not be applied to NNW.
+
+### Small-swell tide observations
+
+Several small/short-period sessions became harder to catch as water filled in.
+This supports prioritizing a lower-to-mid stage for weak swell, but exact MSL
+thresholds are not published as universal rules because datum, bank, and spot
+matter.
+
+## Source-bias observations
+
+| Source | Condition bucket | Observed bias | Operational response | Contributor count |
+|---|---|---|---|---:|
+| Open-Meteo blended wind | Levante before roughly 09:00 | sometimes too strong | confirm the dawn window with another source | 1 |
+| Open-Meteo wind | exposed west coast morning/midday in established nortada | sometimes too light | use an official/alternate ceiling and visual check | 1 |
+| Open-Meteo wind | exposed west-coast evening lull | lighter value sometimes more accurate than a hotter alternate | do not extend a morning bias into evening | 1 |
+| Surfline size | Beliche on high-energy NW | one substantial undercall | do not let one source veto corroborated high-energy input | 1 |
+| Surf-Forecast size/period | Beliche/Zavial wrap cases | useful nearshore signal | retain the offshore-period artefact gate | 1 |
+| combined wave height | crossing N/NW wind-wave | can overstate clean face | start from primary and secondary components | 1 |
 
 ## Contribution priority
 

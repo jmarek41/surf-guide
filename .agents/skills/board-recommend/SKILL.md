@@ -15,6 +15,7 @@ Read:
 
 - `data/profile.md`
 - `data/boards/history.md` if it exists
+- `data/boards/fit-calibration.md` if it exists
 - the active location pack when destination waves matter
 
 If board fields are incomplete, ask one compact batch for:

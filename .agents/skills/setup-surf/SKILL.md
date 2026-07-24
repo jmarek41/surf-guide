@@ -21,6 +21,9 @@ Read:
 Check whether `data/profile.md` and `data/active-location.md` already exist.
 Preserve existing answers unless the user asks to replace them.
 
+If the active-location status is `none`, preserve that state until the user
+provides a destination. Do not invent or reactivate an archived trip.
+
 ## 2. Ask one compact batch
 
 Ask only for missing information, in no more than six numbered questions:
@@ -61,7 +64,9 @@ If it exists:
 
 - verify that its coverage matches the user's drive radius;
 - reference it from `data/active-location.md`;
-- do not duplicate it under `data/`.
+- check for existing private overlays or expanded local drafts under `data/`;
+- reference relevant private overlays in `data/active-location.md` instead of
+  copying their personal annotations into the shared pack.
 
 If it does not exist:
 
@@ -93,6 +98,7 @@ published automatically.
 
 Report:
 
+- active status;
 - active region;
 - shared pack or local draft path;
 - number of included spots;

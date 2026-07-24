@@ -19,7 +19,7 @@ fi
 [ "$(readlink .claude/skills)" = "../.agents/skills" ] ||
   fail ".claude/skills must point to ../.agents/skills"
 
-for skill in setup-surf surf log-session board-recommend; do
+for skill in setup-surf surf log-session board-recommend scan; do
   file=".agents/skills/$skill/SKILL.md"
   [ -f "$file" ] || fail "Missing $file"
   first_line="$(sed -n '1p' "$file")"
@@ -30,9 +30,13 @@ for skill in setup-surf surf log-session board-recommend; do
     fail "$file is missing a description"
 done
 
-for template in profile.md active-location.md sessions.csv personal-calibration.md; do
+for template in profile.md active-location.md sessions.csv personal-calibration.md scan-config.md scan-log.md flight-price-log.csv; do
   [ -f "templates/$template" ] || fail "Missing templates/$template"
 done
+
+[ -f "scan/destinations.md" ] || fail "Missing public scan destination catalog"
+[ -x "scripts/serpapi_flights.py" ] ||
+  fail "scripts/serpapi_flights.py must be executable"
 
 if command -v rg >/dev/null 2>&1; then
   if rg -n --hidden \
@@ -41,6 +45,7 @@ if command -v rg >/dev/null 2>&1; then
     -e 'github_pat_[A-Za-z0-9_]+' \
     -e 'sk-[A-Za-z0-9]{20,}' \
     -e 'SERPAPI_KEY[[:space:]]*=' \
+    -e 'SERPAPI_API_KEY[[:space:]]*=[A-Za-z0-9_-]{20,}' \
     .; then
     fail "Possible credential detected"
   fi

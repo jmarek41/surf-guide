@@ -29,6 +29,7 @@ Ask only for fields necessary to avoid a misleading record:
 - observed face height, cleanliness, consistency, wind feel, and verdict;
 - forecast numbers only if they were saved in the prior conversation or the
   user provides them;
+- a primary and alternate wind-source value when both were captured;
 - what matched and what missed.
 
 Never invent missing forecast values. Leave CSV fields empty.

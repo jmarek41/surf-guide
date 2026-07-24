@@ -69,6 +69,13 @@ Forecast and board-selection changes should explain:
 - behaviour before and after;
 - destinations or rider types for which the rule may not apply.
 
+## Short-trip catalog changes
+
+The public scan catalog may contain established destinations, approximate
+forecast cells, gateway airports, and public provider identifiers. Verify
+changes against two independent sources where possible. Never contribute
+personal origins, budgets, bookings, fare history, or API keys.
+
 ## Pull-request scope
 
 Prefer one location pack or one methodological change per pull request. Small,
