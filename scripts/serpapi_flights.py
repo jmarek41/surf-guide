@@ -23,11 +23,6 @@ def load_key() -> str:
         for line in secret_file.read_text(encoding="utf-8").splitlines():
             if line.startswith("SERPAPI_API_KEY="):
                 return line.split("=", 1)[1].strip()
-    legacy_secret_file = Path("data/secrets/serpapi-key")
-    if legacy_secret_file.exists():
-        key = legacy_secret_file.read_text(encoding="utf-8").strip()
-        if key:
-            return key
     raise SystemExit(
         "SerpAPI key missing. Set SERPAPI_API_KEY or "
         "data/secrets/serpapi.env."

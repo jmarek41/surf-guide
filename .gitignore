@@ -7,8 +7,18 @@ data/*
 .env.*
 *.key
 *.pem
-*token*
-*secret*
+token
+token.*
+tokens
+tokens.*
+*.token
+*.token.*
+secret
+secret.*
+secrets
+secrets.*
+*.secret
+*.secret.*
 
 # Operating-system and editor files
 .DS_Store

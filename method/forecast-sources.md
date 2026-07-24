@@ -1,8 +1,9 @@
 # Forecast sources
 
 Provider mechanics change. Verify URLs and parameter names against official
-documentation when a request fails. The endpoints, fields, batching, and model
-comparison below were live-checked on 2026-07-24.
+documentation when a request fails. The endpoints, fields, and batching below
+were live-checked on 2026-07-24. Named-model availability is qualified
+separately: an all-null response is not a successful model check.
 
 ## Default source stack
 
@@ -54,6 +55,15 @@ has been the default/best-match result versus NOAA GFS Wave:
 ```text
 models=best_match,ncep_gfswave016
 ```
+
+When batching with `models=`, the response suffixes each hourly field per
+model, for example `swell_wave_height_marine_best_match` and
+`swell_wave_height_ncep_gfswave016`. Parsers must match the suffixed names.
+
+`ncep_gfswave016` covers roughly 52.5°N–15°S and can still return all-null
+rows inside that coverage when a model run is unavailable (observed 2026-07-24
+for Iberian and Mediterranean cells). In that case retry with the global
+`ncep_gfswave025` as the comparison arm.
 
 Treat model names as version-sensitive. If a model returns null or the API
 rejects it, consult current Open-Meteo documentation and report that the second

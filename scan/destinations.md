@@ -29,7 +29,7 @@ available schedules, transfers, and connection policy.
 
 ## Phase-1 triage cells
 
-Rows marked `triage` form the default 13-cell portfolio. A private configuration
+The 14 rows below form the default triage portfolio. A private configuration
 may include a subset.
 
 | Order | Destination | Cluster | Latitude | Longitude | Tier |
@@ -41,67 +41,72 @@ may include a subset.
 | 5 | north-portugal | Porto / Matosinhos | 41.170 | -8.690 | Atlantic |
 | 6 | north-portugal | Figueira / Cabedelo | 40.150 | -8.870 | Atlantic |
 | 7 | sagres | Tonel | 37.007 | -8.953 | Atlantic |
-| 8 | cadiz | El Palmar | 36.230 | -6.070 | Atlantic |
-| 9 | southwest-france | Seignosse | 43.699 | -1.441 | Atlantic |
-| 10 | basque | Zarautz | 43.290 | -2.171 | Atlantic |
-| 11 | morocco | Devil's Rock | 30.506 | -9.687 | Atlantic |
-| 12 | rome | Banzai | 42.030 | 11.920 | Mediterranean |
-| 13 | sardinia | Capo Mannu | 40.030 | 8.383 | Mediterranean |
+| 8 | sagres | Mareta / south-coast cell | 37.050 | -8.860 | South-coast wind-swell |
+| 9 | cadiz | El Palmar | 36.230 | -6.070 | Atlantic |
+| 10 | southwest-france | Seignosse | 43.699 | -1.441 | Atlantic |
+| 11 | basque | Zarautz | 43.290 | -2.171 | Atlantic |
+| 12 | morocco | Devil's Rock | 30.506 | -9.687 | Atlantic |
+| 13 | rome | Banzai | 42.030 | 11.920 | Mediterranean |
+| 14 | sardinia | Capo Mannu | 40.030 | 8.383 | Mediterranean |
 
 ## Confirmation spot cache
 
 `—` means no verified public page was found; do not invent an identifier.
+Outside the Sagres location pack, a row with a provider slug is still only a
+single-source cache entry until Phase 2 verifies it live. A row without a slug
+is unverified. Sagres rows inherit their per-spot evidence labels and source IDs
+from the public location pack.
 
-| Destination | Spot | Latitude | Longitude | Surf-Forecast slug | Exposure/refuge note |
-|---|---|---:|---:|---|---|
-| canaries | Famara | 29.120 | -13.560 | `Playade-Famara_1` | exposed beach |
-| canaries | Caleta de Caballo | 29.117 | -13.640 | `Caletade-Cabello` | reef; advanced sections |
-| canaries | El Cotillo | 28.680 | -14.015 | `Cotillo` | exposed beach |
-| canaries | Grandes Playas | 28.710 | -13.830 | — | east-facing alternative |
-| lisbon | Ribeira d'Ilhas | 38.990 | -9.420 | `Ribeira-Dilhas` | point/reef; crowd concentration |
-| lisbon | Foz do Lizandro | 38.940 | -9.420 | `Fozdo-Lizandro` | beach alternative |
-| lisbon | Cantinho da Baía | 39.370 | -9.340 | `Cantinho` | sheltered size refuge |
-| lisbon | Lagide | 39.380 | -9.330 | `Lagide` | reef-influenced |
-| lisbon | Molhe Leste | 39.350 | -9.370 | `Molhe-Leste` | breakwater shelter |
-| north-portugal | Matosinhos | 41.170 | -8.690 | `Matosinhos` | harbour-sheltered beach |
-| north-portugal | Espinho | 41.000 | -8.650 | `Espinho` | exposed beach/jetty |
-| north-portugal | Furadouro | 40.873 | -8.679 | `Furadouro` | exposed beach |
-| north-portugal | Cabedelo | 40.150 | -8.870 | `Cabedelo` | breakwater influence |
-| north-portugal | Buarcos | 40.170 | -8.890 | `Buarcos` | long right when swell aligns |
-| sagres | Tonel | 37.007 | -8.953 | `Tonel` | exposed anchor |
-| sagres | Beliche | 37.025 | -8.965 | `Beliche` | Cape St Vincent shadow |
-| sagres | Mareta | 37.050 | -8.860 | `Mareta` | use south-coast forecast cell |
-| sagres | Cordoama | 37.110 | -8.940 | `Cordama` | exposed west coast |
-| sagres | Castelejo | 37.101 | -8.947 | `Castelejo` | exposed west coast |
-| sagres | Amado | 37.166 | -8.904 | `Praiado-Amado` | true-N section shelter only |
-| sagres | Arrifana | 37.294 | -8.872 | `Arrifana` | headland size/wind refuge |
-| cadiz | El Palmar | 36.230 | -6.070 | `Playa-El-Palmar` | exposed beach |
-| cadiz | Fuente del Gallo | 36.290 | -6.110 | — | partial shelter |
-| cadiz | Caños de Meca | 36.180 | -6.030 | `Canosde-Meca` | Cabo Trafalgar refuge |
-| southwest-france | Les Bourdaines | 43.699 | -1.441 | `Les-Bourdaines` | exposed beach |
-| southwest-france | Les Estagnots | 43.686 | -1.444 | `Les-Estagnots` | exposed beach |
-| southwest-france | Hossegor La Sud | 43.662 | -1.447 | `La-Sud` | harbour/headland shelter |
-| southwest-france | Le Prévent | 43.651 | -1.447 | `Capbreton-Le-Prevent` | Gouf/refuge behavior |
-| southwest-france | Côte des Basques | 43.479 | -1.569 | `Cotedes-Basques` | sheltered high-energy option |
-| basque | Zarautz | 43.290 | -2.171 | `Zarautz` | exposed multi-peak beach |
-| basque | Zurriola | 43.327 | -1.973 | `Zurriola-hondartza` | city beach |
-| basque | Sopelana | 43.391 | -3.002 | `Sopelana` | exposed beach |
-| basque | Bakio | 43.434 | -2.802 | `Bakio` | exposed beach |
-| basque | Mundaka | 43.409 | -2.695 | `Mundaka` | advanced, tidal river-mouth left |
-| morocco | Devil's Rock | 30.506 | -9.687 | `Devils-Rock` | accessible point/beach |
-| morocco | Banana Point | 30.501 | -9.683 | `Banana-Point` | right point |
-| morocco | Panorama Point | 30.540 | -9.710 | `Panoramas` | right point |
-| morocco | Imsouane Bay | 30.837 | -9.811 | — | long sheltered right |
-| morocco | Cathedral Point | 30.844 | -9.823 | `Pointed-Imessouane` | more exposed point |
-| morocco | Tamri | 30.730 | -9.850 | `Tamri-Plage` | exposed fallback beach |
-| rome | Banzai | 42.030 | 11.920 | `Banzai_2` | reef/groynes hold wind-swell |
-| rome | Santa Severa | 42.016 | 11.958 | — | structure-dependent |
-| rome | Lido di Ostia | 41.726 | 12.276 | — | open beach wind-swell |
-| rome | Fregene | 41.849 | 12.193 | — | open beach wind-swell |
-| sardinia | Capo Mannu | 40.030 | 8.383 | `Capo-Mannu` | lee-side point in Mistral |
-| sardinia | Putzu Idu | 40.030 | 8.390 | — | clean after Mistral eases |
-| sardinia | Sa Mesa Longa | 40.046 | 8.398 | `Sa-Mesa-Longa` | reef-sheltered softer option |
-| sardinia | Porto Ferro | 40.660 | 8.190 | `Porto-Ferro` | exposed NW beach |
+| Destination | Spot | Latitude | Longitude | Surf-Forecast slug | Exposure/refuge note | Evidence status |
+|---|---|---:|---:|---|---|---|
+| canaries | Famara | 29.120 | -13.560 | `Playade-Famara_1` | exposed beach | single-source cache; verify live |
+| canaries | Caleta de Caballo | 29.117 | -13.640 | `Caletade-Cabello` | reef; advanced sections | single-source cache; verify live |
+| canaries | El Cotillo | 28.680 | -14.015 | `Cotillo` | exposed beach | single-source cache; verify live |
+| canaries | Grandes Playas | 28.710 | -13.830 | — | east-facing alternative | unverified cache; verify live |
+| lisbon | Ribeira d'Ilhas | 38.990 | -9.420 | `Ribeira-Dilhas` | point/reef; crowd concentration | single-source cache; verify live |
+| lisbon | Foz do Lizandro | 38.940 | -9.420 | `Fozdo-Lizandro` | beach alternative | single-source cache; verify live |
+| lisbon | Cantinho da Baía | 39.370 | -9.340 | `Cantinho` | sheltered size refuge | single-source cache; verify live |
+| lisbon | Lagide | 39.380 | -9.330 | `Lagide` | reef-influenced | single-source cache; verify live |
+| lisbon | Molhe Leste | 39.350 | -9.370 | `Molhe-Leste` | breakwater shelter | single-source cache; verify live |
+| north-portugal | Matosinhos | 41.170 | -8.690 | `Matosinhos` | harbour-sheltered beach | single-source cache; verify live |
+| north-portugal | Espinho | 41.000 | -8.650 | `Espinho` | exposed beach/jetty | single-source cache; verify live |
+| north-portugal | Furadouro | 40.873 | -8.679 | `Furadouro` | exposed beach | single-source cache; verify live |
+| north-portugal | Cabedelo | 40.150 | -8.870 | `Cabedelo` | breakwater influence | single-source cache; verify live |
+| north-portugal | Buarcos | 40.170 | -8.890 | `Buarcos` | long right when swell aligns | single-source cache; verify live |
+| sagres | Tonel | 37.007 | -8.953 | `Tonel` | exposed anchor | location pack (per-spot labels) |
+| sagres | Beliche | 37.025 | -8.965 | `Beliche` | Cape St Vincent shadow | location pack (per-spot labels) |
+| sagres | Mareta | 37.050 | -8.860 | `Mareta` | use south-coast forecast cell | location pack (per-spot labels) |
+| sagres | Cordoama | 37.110 | -8.940 | `Cordama` | exposed west coast | location pack (per-spot labels) |
+| sagres | Castelejo | 37.101 | -8.947 | `Castelejo` | exposed west coast | location pack (per-spot labels) |
+| sagres | Amado | 37.166 | -8.904 | `Praiado-Amado` | true-N section shelter only | location pack (per-spot labels) |
+| sagres | Arrifana | 37.294 | -8.872 | `Arrifana` | headland size/wind refuge | location pack (per-spot labels) |
+| cadiz | El Palmar | 36.230 | -6.070 | `Playa-El-Palmar` | exposed beach | single-source cache; verify live |
+| cadiz | Fuente del Gallo | 36.290 | -6.110 | — | partial shelter | unverified cache; verify live |
+| cadiz | Caños de Meca | 36.180 | -6.030 | `Canosde-Meca` | Cabo Trafalgar refuge | single-source cache; verify live |
+| southwest-france | Les Bourdaines | 43.699 | -1.441 | `Les-Bourdaines` | exposed beach | single-source cache; verify live |
+| southwest-france | Les Estagnots | 43.686 | -1.444 | `Les-Estagnots` | exposed beach | single-source cache; verify live |
+| southwest-france | Hossegor La Sud | 43.662 | -1.447 | `La-Sud` | harbour/headland shelter | single-source cache; verify live |
+| southwest-france | Le Prévent | 43.651 | -1.447 | `Capbreton-Le-Prevent` | Gouf/refuge behavior | single-source cache; verify live |
+| southwest-france | Côte des Basques | 43.479 | -1.569 | `Cotedes-Basques` | sheltered high-energy option | single-source cache; verify live |
+| basque | Zarautz | 43.290 | -2.171 | `Zarautz` | exposed multi-peak beach | single-source cache; verify live |
+| basque | Zurriola | 43.327 | -1.973 | `Zurriola-hondartza` | city beach | single-source cache; verify live |
+| basque | Sopelana | 43.391 | -3.002 | `Sopelana` | exposed beach | single-source cache; verify live |
+| basque | Bakio | 43.434 | -2.802 | `Bakio` | exposed beach | single-source cache; verify live |
+| basque | Mundaka | 43.409 | -2.695 | `Mundaka` | advanced, tidal river-mouth left | single-source cache; verify live |
+| morocco | Devil's Rock | 30.506 | -9.687 | `Devils-Rock` | accessible point/beach | single-source cache; verify live |
+| morocco | Banana Point | 30.501 | -9.683 | `Banana-Point` | right point | single-source cache; verify live |
+| morocco | Panorama Point | 30.540 | -9.710 | `Panoramas` | right point | single-source cache; verify live |
+| morocco | Imsouane Bay | 30.837 | -9.811 | — | long sheltered right | unverified cache; verify live |
+| morocco | Cathedral Point | 30.844 | -9.823 | `Pointed-Imessouane` | more exposed point | single-source cache; verify live |
+| morocco | Tamri | 30.730 | -9.850 | `Tamri-Plage` | exposed fallback beach | single-source cache; verify live |
+| rome | Banzai | 42.030 | 11.920 | `Banzai_2` | reef/groynes hold wind-swell | single-source cache; verify live |
+| rome | Santa Severa | 42.016 | 11.958 | — | structure-dependent | unverified cache; verify live |
+| rome | Lido di Ostia | 41.726 | 12.276 | — | open beach wind-swell | unverified cache; verify live |
+| rome | Fregene | 41.849 | 12.193 | — | open beach wind-swell | unverified cache; verify live |
+| sardinia | Capo Mannu | 40.030 | 8.383 | `Capo-Mannu` | lee-side point in Mistral | single-source cache; verify live |
+| sardinia | Putzu Idu | 40.030 | 8.390 | — | clean after Mistral eases | unverified cache; verify live |
+| sardinia | Sa Mesa Longa | 40.046 | 8.398 | `Sa-Mesa-Longa` | reef-sheltered softer option | single-source cache; verify live |
+| sardinia | Porto Ferro | 40.660 | 8.190 | `Porto-Ferro` | exposed NW beach | single-source cache; verify live |
 
 ## Destination notes
 

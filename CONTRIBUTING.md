@@ -36,6 +36,8 @@ Use lowercase ASCII slugs with hyphens. Public location packs should contain:
 - `community-observed` — anonymized first-hand report, with the number of
   independent contributors stated.
 - `inference` — geometry or model interpretation, explicitly labelled.
+- `unverified` — a reported detail retained for follow-up but not yet supported
+  well enough to use as an operational fact.
 - `unknown` — leave the field blank rather than guess.
 
 Multiple sessions from the same surfer are valuable calibration but remain one

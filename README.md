@@ -60,6 +60,18 @@ Review the domain and approve only sources you trust.
 `.agents/skills/`. Tools that do not discover that path automatically can be
 directed to the relevant `SKILL.md` file.
 
+### Windows checkout note
+
+`CLAUDE.md` and `.claude/skills` are compatibility symlinks. On Windows, enable
+Developer Mode and clone with symlink support, for example:
+
+```powershell
+git -c core.symlinks=true clone https://github.com/jmarek41/surf-guide.git
+```
+
+If a checkout renders either symlink as a small text file, use the canonical
+`AGENTS.md` and `.agents/skills/` paths or re-clone after enabling symlinks.
+
 ## Private data stays private
 
 Setup writes files only under `data/`:
@@ -70,6 +82,7 @@ data/
 ├── active-location.md
 ├── sessions/
 ├── calibration/
+├── location-drafts/
 ├── boards/
 ├── scan/
 └── secrets/
